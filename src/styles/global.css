@@ -1,0 +1,239 @@
+@import '@fontsource-variable/quicksand';
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at 50% -10%, #1d2c6b 0%, var(--c-bg) 55%, var(--c-bg-deep) 100%) fixed;
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--c-focus);
+  outline-offset: 3px;
+}
+
+.app {
+  min-height: 100dvh;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: max(var(--space-4), env(safe-area-inset-top)) var(--space-4) max(var(--space-5), env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  flex: 1;
+}
+
+.screen-title {
+  font-size: 1.7rem;
+  outline: none;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.row {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.muted {
+  color: var(--c-muted);
+}
+
+.center {
+  text-align: center;
+  align-items: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Buttons */
+.btn {
+  min-height: var(--tap);
+  min-width: 44px;
+  padding: var(--space-3) var(--space-5);
+  border-radius: 999px;
+  border: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--c-yellow);
+  color: var(--c-on-accent);
+  box-shadow: 0 6px 0 #c79f12, 0 0 24px rgba(255, 212, 59, 0.35);
+}
+
+.btn-pink {
+  background: var(--c-pink);
+  color: var(--c-on-accent);
+  box-shadow: 0 6px 0 #b8327f;
+}
+
+.btn-blue {
+  background: var(--c-blue);
+  color: var(--c-on-accent);
+  box-shadow: 0 6px 0 #1b93b3;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--c-text);
+  box-shadow: inset 0 0 0 2px var(--c-blue);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--c-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding-inline: var(--space-3);
+}
+
+.btn-xl {
+  font-size: 1.35rem;
+  min-height: 64px;
+  padding-inline: var(--space-6);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Cards */
+.card {
+  background: var(--c-surface);
+  border-radius: var(--radius-l);
+  padding: var(--space-5);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  background: var(--c-surface-2);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.banner {
+  background: var(--c-surface-2);
+  border-radius: var(--radius-m);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}

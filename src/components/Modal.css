@@ -1,0 +1,38 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 24, 0.78);
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  z-index: 10;
+}
+
+.modal {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--glow-blue);
+  animation: pop 0.25s ease-out;
+}
+
+.modal h2 {
+  font-size: 1.4rem;
+}
+
+.modal-body {
+  color: var(--c-muted);
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: var(--space-3);
+  justify-content: flex-end;
+}
+
+.modal-actions .btn {
+  flex: 1 1 140px;
+}

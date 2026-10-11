@@ -1,0 +1,30 @@
+:root {
+  --c-bg: #0b1433;
+  --c-bg-deep: #070d24;
+  --c-surface: #16224d;
+  --c-surface-2: #1f2f66;
+  --c-text: #f4f7ff;
+  --c-muted: #bcc6ec;
+  --c-blue: #3ad7ff;
+  --c-pink: #ff5cbf;
+  --c-yellow: #ffd43b;
+  --c-purple: #9b7bff;
+  --c-green: #5cf2a0;
+  --c-on-accent: #0b1433;
+  --c-focus: #ffd43b;
+
+  --font: 'Quicksand Variable', 'Quicksand', ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius-s: 12px;
+  --radius-m: 20px;
+  --radius-l: 28px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --tap: 48px;
+  --glow-blue: 0 0 0 2px var(--c-blue), 0 0 18px rgba(58, 215, 255, 0.45);
+  --glow-pink: 0 0 0 2px var(--c-pink), 0 0 18px rgba(255, 92, 191, 0.45);
+  --glow-yellow: 0 0 0 2px var(--c-yellow), 0 0 18px rgba(255, 212, 59, 0.45);
+}
